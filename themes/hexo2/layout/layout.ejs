@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html<% if(config.language){ %> lang="<%= config.language %>" <% } %>>
+<%- partial('_partial/head') %>
+<body>
+	<div class="body-box">
+		<div class="content-box">
+			<%- partial('_partial/sidebar') %>
+			<div class="content-article">
+				<i class="mobile-toggle" style="display:none;"><img src="/imgs/menu.png"/></i>
+				<div class="content-article-box">
+					<%- body %>
+					<%
+						if(!(is_post()||is_page())){
+					%>
+						<%- partial('_partial/pagination') %>
+					<%
+						}
+					%>
+				</div>
+				<%- partial('_partial/footer',{}, {cache: true}) %>
+			</div>
+		</div>
+	</div>
+	<%- js('js/org/jquery.min.js') %>
+	<%- js('js/feature.js') %>
+	<script>
+		var Feature = new Feature();
+		Feature.init();
+	</script>
+</body>
+</html>

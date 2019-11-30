@@ -1,0 +1,26 @@
+// ------------------------------
+// 总样式入口文件
+// ------------------------------
+
+@import "_base/variables.styl"
+@import "_base/mixins.styl"
+
+html
+body
+    height 100%
+    overflow hidden
+body
+    color $text_color
+    background-color #fff
+    font-family source-han-serif-sc, serif;
+
+.body-box
+    height 100%
+    .content-box
+        display flex
+        align-items:stretch;
+        height 100%
+    
+@import "org/reset.css"
+@import "_module/*"
+@import "_util/media"

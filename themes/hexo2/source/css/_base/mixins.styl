@@ -1,0 +1,17 @@
+// ------------------------------
+// 混合样式
+// ------------------------------
+
+border(direction=all, args=1px dotted $border_color)
+    if direction == all
+        border: args
+    else
+        border-{direction}: args
+transition(attr=all,time=0.4s)
+    -webkit-transition: attr time
+    -moz-transition: attr time
+    -o-transition: attr time
+    transition: attr time
+
+
+

@@ -1,0 +1,81 @@
+// ------------------------------
+// 左边栏
+// ------------------------------
+
+.sidebar
+    width 300px
+    height 100%
+    box-shadow 0px 0px 10px #dadada
+    position relative
+    .sidebar-wrap
+        padding 80px
+        &>div
+            margin-bottom 40px
+    .widget-title
+        padding-bottom 20px
+        font-size 20px
+        color $theme_color
+        font-weight normal
+        text-align center
+    .widget-me
+        padding 40px 80px
+        word-break break-all
+        box-sizing border-box
+        text-align center
+        .me-name
+            a
+                color $text_color
+                font-size 28px
+                padding 20px 0px
+                writing-mode: vertical-rl
+            small
+                display block
+                color $text_color
+                font-size 14px
+                writing-mode: vertical-rl
+        .me-avatar
+            width 100px
+            margin auto
+            img
+                width 100%
+                border-radius 50%
+                transition()
+                &:hover
+                    transform rotate(360deg)
+    .widget-nav
+        .nav-list
+            text-align center
+            li
+                display inline-block
+                writing-mode: vertical-rl
+                a
+                    color #333
+                    display block
+                    font-size 18px
+                    padding 10px 0px;
+                    background-color #fff
+                    border-radius 3px
+                    transition()
+                    &:hover
+                    &.active
+                        color #fff
+                        background-color #2f3363
+                        font-weight bold
+    .widget-tags
+        a
+            color #818181
+            transition(color)
+            &:hover
+                color $theme_color
+.footer
+    text-align center
+    padding-bottom 40px
+    .footer-intro
+        color $text_color
+        margin 10px 0px
+        font-size 14px
+        a
+            color: $text_color
+    .extra
+        font-size 10px
+        color #b1b1b1

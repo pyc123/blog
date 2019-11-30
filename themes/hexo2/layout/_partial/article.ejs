@@ -1,0 +1,40 @@
+<article class="article <%- is_archive() ? 'archive' : '' %> <%- is_post()||is_page() ? 'article-post' : '' %>">
+    <h2 class="article-title cl">
+        <a href="<%- config.root %><%- item.path %>" title="<%- item.title ? item.title : __('emptyTitle') %>" class="title-main"><%- item.title ? item.title : __('emptyTitle') %></a>
+        <small class="article-time"><%= item.date.format(config.date_format) %></small>
+    </h2>
+    <div class="article-con">
+        <%
+            var str;
+            if(is_post()||is_page()){
+                str = item.content;
+            }
+        %>
+        <%- str %>
+    </div>
+    <% if(is_post()){ %>
+    <div class="article-navgition">
+        <div class="navgition-wrap">
+            <% if(item.prev){ %>
+                <div class="navgition-prev">
+                    <h2 class="navgition-title"><%= __('prev') %>: <a href="<%- url_for(item.prev.path) %>"> <%- item.prev.title ? item.prev.title : __('emptyTitle') %> </a></h2>
+                </div>
+            <% }else{ %>
+                <div class="navgition-prev">
+                    <h2 class="navgition-title"><%= __('prev') %>: <a href="javascript:void(0);"><%= __('none') %></a></h2>
+                </div>
+            <% } %>
+
+            <% if(item.next){ %>
+                <div class="navgition-next">
+                    <h2 class="navgition-title"><%= __('next') %>: <a href="<%- url_for(item.next.path) %>"><%- item.next.title ? item.next.title : __('emptyTitle') %> </a></h2>
+                </div>
+            <% }else{ %>
+                <div class="navgition-next">
+                    <h2 class="navgition-title"><%= __('next') %>: <a href="javascript:void(0);"><%= __('none') %></a></h2>
+                </div>
+            <% } %>
+        </div>
+    </div>
+    <% } %>
+</article>

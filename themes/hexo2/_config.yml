@@ -1,0 +1,15 @@
+# site
+name: 桂花
+description: 站点描述
+favicon:
+rss:  
+
+# me
+meAvatar: /imgs/avatar.jpg
+
+# navigation
+menu:
+  主页:
+    url: /
+  归档:
+    url: /archives/

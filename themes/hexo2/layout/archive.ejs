@@ -1,0 +1,14 @@
+<% var old, year %>
+<% page.posts.sort('date', 'desc').each(function(post) { %>
+    <%
+        year = date(post.date,'YYYY');
+        if(old != year){
+            old = year;
+    %>
+        <div class="archive-year"><span class="year-block"></span><span class="year-info"><%= year %></span></div>
+    <%
+        }
+    %>
+    <%- partial('_partial/article.ejs', {item: post}) %>
+<% }); %>
+

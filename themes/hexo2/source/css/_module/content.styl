@@ -1,0 +1,171 @@
+// ------------------------------
+// 文章内容样式
+// ------------------------------
+.content-article
+    flex 1
+    height 100%
+    overflow auto
+    background-color #fff
+    &::-webkit-scrollbar
+        width 5px
+        height 1px
+    &::-webkit-scrollbar-thumb
+        border-radius 10px
+        background $theme_color
+    .content-article-box
+        padding 60px 80px
+    .article
+        padding 20px 0px
+        border-bottom 1px dotted #dadada
+    .article-post
+        padding 50px
+        border-bottom none
+        .article-title
+            font-size 32px !important
+            margin-bottom 50px
+            word-break break-all
+    .article-time
+        float right
+        font-size 16px
+        font-weight normal
+        color $text_color
+    .article-title
+        line-height 50px
+        font-size 26px
+    .article-title 
+        .title-main
+            font-weight normal
+            color $text_color
+            transition()
+            &:hover
+                color $theme_color
+    .article-con
+        font-size $text_size
+        line-height 150%
+        letter-spacing 0.5px
+        p
+            margin 10px 0px
+            word-break break-all
+        h1, h2, h3, h4, h5,h6
+            margin 30px 0px
+            border(bottom)
+        h1
+            font-size 1.5em
+        h2
+            font-size 1.3em
+        h3
+            font-size 1.1em
+        blockquote
+            border(all, 1px solid $theme_color)
+            font-size 14px
+            padding 10px 20px
+            margin 20px 0px
+            overflow auto
+        a
+            color $text_color
+            text-decoration underline
+        ul
+        ol
+            padding-left 20px
+        li
+            list-style square
+        .highlight
+            border()
+            font-size 0.8em
+            background-color#fff
+            border(all, 1px dotted #c9c9c9)
+            padding 5px 30px
+            overflow auto
+            color #333
+            margin 20px 0px
+            .gutter
+                color #b1b1b1
+                padding-right 10px
+            table
+                width auto
+                text-indent 0px
+                td
+                th
+                    border(all, none)
+        code
+            background-color #eee
+            display inline-block
+            padding 0px 10px
+            font-size 14px
+            margin 5px
+        hr
+            border(all, none)
+            background-color $border_color 
+            height 1px
+        img
+            display block
+            border-radius 2px
+            max-width 100%
+            margin auto
+            transition()
+            opacity 0.8
+            &:hover
+                opacity 1
+        table
+            width 100%
+            border-collapse collapse
+            text-indent 20px
+            td
+            th
+                padding 5px 0px
+                border(all, 1px solid #dadada)
+            th
+                background $theme_color
+                color #fff
+                text-align left
+                text-indent 20px
+    .article-navgition
+        margin-top 40px
+        font-size 16px
+        .navgition-prev
+            text-align left
+        .navgition-next
+            text-align right
+        .navgition-wrap
+            display flex
+            > div
+                flex 1
+                float left
+                transition(background-color)
+                &:hover
+                    a
+                        text-decoration underline
+            &:after
+                content ""
+                display block
+                clear both
+        .navgition-title
+            font-size 16px
+            font-weight normal
+            color $theme_color
+            a
+                color $text_color
+    .pagination
+        border-bottom 1px dotted #dadada
+        .current
+            color #fff
+            background-color $theme_color
+        span
+        a
+            display inline-block
+            font-size 18px
+            border-right 1px solid #dadada
+            padding 20px
+            color #4e4e4e
+            transition()
+            &:hover
+                color #fff
+                background-color $theme_color   
+    .article-column-title
+        padding 50px 0px
+        font-size 24px
+        span
+            background-color $theme_color
+            color #fff
+            display inline-block
+            margin 0px 5px

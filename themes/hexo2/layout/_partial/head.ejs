@@ -1,0 +1,32 @@
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="description" content="<%= config.description %>">
+	<meta name="keywords" content="<%= config.keywords %>">
+	<%
+	var title = [];
+	if (page.current > 1) title.push(__('page', page.current));
+	if (page.title) title.push(page.title);
+	if (page.category) title.push(page.category);
+	if (page.tag) title.push(page.tag);
+	if (page.archive) {
+		if (page.year) title.push(__('archive', page.year + (page.month ? '/' + page.month : '')));
+		else title.push(__('archive'));
+	}
+	title.push(config.title);
+	%>
+	<title><%= title.join(' - ') %></title>
+  <link rel="alternate" href="<%- theme.rss ? theme.rss : '' %>" type="application/atom+xml"/>
+	<link rel="shortcut icon" href="<%- theme.favicon ? theme.favicon : '' %>"/>
+	<%- css('css/style') %>
+	<script>
+		(function(d) {
+		  var config = {
+			kitId: 'huq1ytd',
+			scriptTimeout: 3000,
+			async: true
+		  },
+		  h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+		})(document);
+	</script>
+</head>

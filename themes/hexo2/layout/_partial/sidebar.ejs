@@ -1,0 +1,29 @@
+<div class="sidebar">
+	<div class="widget-me">
+		<div class="me-avatar">
+			<a href="<%- config.root %>"><img src="<%= theme.meAvatar %>"/></a>
+		</div>
+		<h2 class="me-name">
+			<a href="<%- config.root %>"><%= theme.name %></a>
+		</h2>
+	</div>
+	<div class="widget-nav">
+		<nav class="nav-list">
+			<ul>
+				<% for (var i in theme.menu){ %>
+					<li>
+						<a href="<%- url_for(theme.menu[i].url) %>" class="<%- is_current(url_for(theme.menu[i].url)) ? 'active' : '' %>">
+							<span><%= i %></span>
+						</a>
+					</li>
+				<% } %>
+			</ul>
+		</nav>
+	</div>
+	<div class="sidebar-wrap">
+		<div class="widget-tags">
+			<h2 class="widget-title"><%= __('tag') %></h2>
+			<%- tagcloud({min_font: 10,max_font: 25}) %>
+		</div>
+	</div>
+</div>

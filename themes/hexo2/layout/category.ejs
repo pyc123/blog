@@ -1,0 +1,4 @@
+<h3 class="article-column-title"><%= __('category') %><span><%= page.category %></span>：</h3>
+<% page.posts.each(function(item){ %>
+    <%- partial('_partial/article', {item: item}) %>
+<% }) %>
